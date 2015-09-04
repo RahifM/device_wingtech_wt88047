@@ -5,3 +5,8 @@ allow system_server wifi_data_file:sock_file unlink;
 
 allow system_server sysfs_dt2w:file rw_file_perms;
 allow system_server sysfs_dt2w:dir search;
+
+# To improve app launch times - we would like to force all tasks to
+# run on big cores for app launch (sched_boost) - instead of just
+# boosting them to make it "more likely" to run on big cores.
+allow system_server domain:process setsched;
