@@ -222,7 +222,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    Snap
+    Snap \
+    libmm-qcamera \
+    libshim_camera
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
