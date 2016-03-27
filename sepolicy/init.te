@@ -1,0 +1,1 @@
+allow init sysfs_dt2w:file setattr;
