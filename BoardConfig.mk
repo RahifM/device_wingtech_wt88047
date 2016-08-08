@@ -22,3 +22,12 @@ include $(DEVICE_PATH)/board/*.mk
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
+
+# Custom off-mode charger
+ifneq ($(WITH_CM_CHARGER),false)
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    cm_charger_res_images \
+    font_log.png \
+    libhealthd.cm
+endif
