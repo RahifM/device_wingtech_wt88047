@@ -339,3 +339,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ims/ims.xml:system/etc/permissions/ims.xml \
     $(LOCAL_PATH)/configs/ims/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
 
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
