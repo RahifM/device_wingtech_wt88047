@@ -1,5 +1,5 @@
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
+TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
 TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
 
 BOARD_KERNEL_CMDLINE += \
