@@ -14,6 +14,7 @@
 # limitations under the License.
 
 FORCE_32_BIT := true
+TW_INCLUDE_CRYPTO := true
 
 DEVICE_PATH := device/wingtech/wt88047
 
