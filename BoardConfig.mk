@@ -75,6 +75,13 @@ TARGET_KERNEL_ARCH := arm
 endif
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
+# Rom Tool Chain
+TARGET_GCC_VERSION_EXP := 4.9
+
+# Kernel Tool Chain
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
