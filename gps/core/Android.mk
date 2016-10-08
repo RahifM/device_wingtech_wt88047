@@ -19,6 +19,10 @@ ifeq ($(QCPATH),)
 LOCAL_CFLAGS += -DOSS_BUILD
 endif
 
+ifeq ($(SYSTEM_PROVIDES_GPS_HAX),true)
+LOCAL_CFLAGS += -DSOURCE_GPS_HAX=1
+endif
+
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \

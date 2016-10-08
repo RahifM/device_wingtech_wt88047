@@ -5,6 +5,10 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+ifeq ($(SYSTEM_PROVIDES_GPS_HAX),true)
+LOCAL_CFLAGS += -DSOURCE_GPS_HAX=1
+endif
+
 LOCAL_MODULE := libloc_eng
 LOCAL_MODULE_OWNER := qcom
 
@@ -69,6 +73,10 @@ LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional
+
+ifeq ($(SYSTEM_PROVIDES_GPS_HAX),true)
+LOCAL_CFLAGS += -DSOURCE_GPS_HAX=1
+endif
 
 ## Libs
 
