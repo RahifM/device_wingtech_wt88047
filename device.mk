@@ -235,7 +235,8 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.codecremote=false
+    media.stagefright.codecremote=false \
+    media.stagefright.legacyencoder=true
 
 # Build libstlport for vendor blobs
 PRODUCT_PACKAGES += \
