@@ -234,6 +234,9 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     Snap
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.codecremote=false
+
 # Build libstlport for vendor blobs
 PRODUCT_PACKAGES += \
     libstlport
