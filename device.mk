@@ -231,8 +231,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libmm-qcamera \
-    Snap
+    libmm-qcamera
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.codecremote=false \
