@@ -235,7 +235,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.codecremote=false \
-    media.stagefright.legacyencoder=true
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
 
 # Build libstlport for vendor blobs
 PRODUCT_PACKAGES += \
