@@ -321,3 +321,9 @@ PRODUCT_PACKAGES += KernelAdiutor
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# QMI
+PRODUCT_PACKAGES += \
+    dsi_config.xml \
+    netmgr_config.xml \
+    qmi_config.xml
