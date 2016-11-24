@@ -1,5 +1,5 @@
 # Nick Kralevich <nnk@google.com> : Allow loading files with text relocations from /system
-allow mm-qcamerad system_file:file execmod;
+#allow mm-qcamerad system_file:file execmod;
 
 # Adapted from shamu
 allow mm-qcamerad sensors_socket:sock_file read;
