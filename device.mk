@@ -322,6 +322,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ims \
     imscmlibrary \
+    imssettings \
     init.qti.ims.sh
 
 PRODUCT_COPY_FILES += \
