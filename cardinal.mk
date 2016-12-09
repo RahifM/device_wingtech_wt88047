@@ -34,8 +34,5 @@ PRODUCT_MODEL := Redmi 2
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-PRODUCT_NAME="Redmi 2"
-
 # Build Official
 CARDINAL_RELEASE := true
