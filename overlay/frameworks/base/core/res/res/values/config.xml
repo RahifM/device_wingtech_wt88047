@@ -391,4 +391,7 @@
     <bool name="config_carrier_volte_available">true</bool>
     <bool name="config_carrier_vt_available">true</bool>
 
+    <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
+    <bool name="config_useRoundIcon">true</bool>
+
 </resources>
