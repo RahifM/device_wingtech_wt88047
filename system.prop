@@ -109,3 +109,5 @@ persist.radio.VT_ENABLE=1
 persist.radio.VT_HYBRID_ENABLE=1
 persist.radio.VT_USE_MDM_TIME=0
 
+# Google assistant
+ro.opa.eligible_device=true
