@@ -362,9 +362,7 @@
     <integer name="config_notificationsBatteryFullARGB">0x0000FF00</integer>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <!--
     <bool name="config_intrusiveBatteryLed">true</bool>
-    -->
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -377,9 +375,7 @@
 
     <!-- Does the notification LED support multiple colors?
                   Used to decide if the user can change the colors -->
-    <!--
     <bool name="config_multiColorNotificationLed">true</bool>
-    -->
 
     <!-- Our modem doesn't support this query yet -->
     <string name="config_radio_access_family">GPRS|EDGE|UMTS|HSDPA|HSUPA|HSPA|LTE|HSPAP|GSM|TD_SCDMA|WCDMA|LTE_CA</string>
