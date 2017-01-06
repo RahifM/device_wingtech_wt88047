@@ -333,7 +333,8 @@ PRODUCT_PACKAGES += \
     ims \
     imscmlibrary \
     imssettings \
-    init.qti.ims.sh
+    init.qti.ims.sh \
+    libshims_ims
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ims/imscm.xml:system/etc/permissions/imscm.xml \
