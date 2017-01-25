@@ -313,3 +313,7 @@ DEFAULT_ROOT_METHOD := rootless
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# SELinux
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
