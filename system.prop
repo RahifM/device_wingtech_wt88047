@@ -102,6 +102,7 @@ persist.timed.enable=true
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
 
+<<<<<<< HEAD
 # IMS
 persist.radio.jbims=1
 persist.radio.ROTATION_ENABLE=1
@@ -111,3 +112,6 @@ persist.radio.VT_USE_MDM_TIME=0
 
 # Google assistant
 ro.opa.eligible_device=true
+
+# SIM settings
+ro.telephony.sim_unlocked=1
