@@ -206,4 +206,7 @@
         <item>"/system/framework/arm/boot-core-libart.oat"</item>
         <item>"/system/framework/arm/boot-core-libart.vdex"</item>
    </string-array>
+
+   <bool name="config_nightDisplayAvailable">false</bool>
+
 </resources>
