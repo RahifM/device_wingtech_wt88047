@@ -405,4 +405,6 @@
     <bool name="config_carrier_volte_available">true</bool>
     <bool name="config_carrier_vt_available">true</bool>
 
+    <!-- Enable NightLight -->
+    <bool name="config_nightDisplayAvailable">true</bool>
 </resources>
