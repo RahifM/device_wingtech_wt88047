@@ -413,4 +413,7 @@
          proximity sensor (ideally < 300ms) -->
     <bool name="config_proximityCheckOnWake">true</bool>
 
+    <!-- Enable NightLight -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
 </resources>
