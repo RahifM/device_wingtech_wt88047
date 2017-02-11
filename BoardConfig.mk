@@ -119,16 +119,6 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
@@ -221,6 +211,6 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 # inherit from the proprietary version
 -include vendor/wingtech/wt88047/BoardConfigVendor.mk
 
+# Citrus Stuffs
 TARGET_USE_CM_RAMDISK := true
-
 TARGET_CUSTOM_DTBTOOL := true
