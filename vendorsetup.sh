@@ -14,4 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo tipsy_wt88047-userdebug
+add_lunch_combo citrus_wt88047-eng
+add_lunch_combo citrus_wt88047-user
+add_lunch_combo citrus_wt88047-userdebug
