@@ -49,7 +49,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 endif
 
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP += device/wingtech/wt88047/system.prop
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
