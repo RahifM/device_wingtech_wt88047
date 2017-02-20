@@ -24,7 +24,7 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Screen density
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=280
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -82,10 +82,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicerec=false
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -250,10 +246,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Disable all camera debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_cm
 
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
