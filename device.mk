@@ -199,6 +199,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.target.power.rc \
     init.qcom.usb.rc \
+    init.qcom.mem.sh \
     memcheck
 
 # Sensor HAL

@@ -513,3 +513,8 @@ on property:sys.boot_completed=1
     restart ril-daemon
     restart ril-daemon2
     restart netmgrd
+
+service qcom-mem /system/bin/sh /system/etc/init.qcom.mem.sh
+    disabled
+    oneshot
+
