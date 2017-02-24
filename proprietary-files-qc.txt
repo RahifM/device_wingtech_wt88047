@@ -150,12 +150,7 @@ vendor/lib/libulp2.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxtwifi_ulp_adaptor.so
 
-# Compass
-vendor/lib/libcalmodule_akm.so
-vendor/lib/libcalmodule_yamaha.so
-vendor/lib/libcalmodule_gyroscope.so
-
-# Graphics firmware
+# Graphics Firmware
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 
