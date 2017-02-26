@@ -181,6 +181,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 # Qualcomm support
 BOARD_USES_QC_TIME_SERVICES := true
 BOARD_USES_QCOM_HARDWARE := true
