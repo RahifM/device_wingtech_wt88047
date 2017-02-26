@@ -315,3 +315,6 @@ endif
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+
+# Our Kernel Aduitor
+PRODUCT_PACKAGES += KernelAdiutor
