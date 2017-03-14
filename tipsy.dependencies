@@ -1,10 +1,12 @@
 [
   {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
+    "repository": "premaca/proprietary_vendor_wingtech",
+    "target_path": "vendor/wingtech",
+    "branch": "n7.0-caf"
   },
   {
-    "repository": "android_kernel_wingtech_msm8916",
-    "target_path": "kernel/wingtech/msm8916"
+    "repository": "premaca/Xiaomi_Kernel_OpenSource",
+    "target_path": "kernel/wingtech/msm8916",
+    "branch": "n7.1"
   }
 ]
