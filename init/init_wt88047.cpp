@@ -207,7 +207,7 @@ void vendor_load_properties()
     char modem_version[IMG_VER_BUF_LEN];
     int rc;
 
-    std::string product = property_get("ro.product.name");
+    std::string product = property_get("ro.carbon.name");
     if ((strstr(product.c_str(), "wt88047") == NULL))
         return;
 
