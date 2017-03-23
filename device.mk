@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images
+    omni_charger_res_images
 
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
