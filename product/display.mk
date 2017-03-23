@@ -8,3 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+# Charger
+ PRODUCT_PACKAGES += \
+     omni_charger_res_images
