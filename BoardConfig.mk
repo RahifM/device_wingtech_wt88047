@@ -77,9 +77,6 @@ endif
 
 SYSTEM_PARSE_LEGACY_KERNEL_CMDLINE_BOARDID := true
 
-# Root Method
-DEFAULT_ROOT_METHOD := rootless
-
 # Rom Tool Chain
 TARGET_GCC_VERSION_EXP := 4.9
 
