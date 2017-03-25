@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common stuffs.
-$(call inherit-product, vendor/XOS/config/common.mk)
+$(call inherit-product, vendor/xos/config/common.mk)
 
 # Inherit from wt88047 device
 $(call inherit-product, device/wingtech/wt88047/device.mk)
