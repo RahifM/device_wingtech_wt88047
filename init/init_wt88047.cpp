@@ -139,13 +139,4 @@ void init_target_properties()
     property_set("ro.build.description", "wt88047-user 5.1.1 LMY47V V8.2.1.0.LHJMIDL release-keys");
     property_set("ro.build.fingerprint", "Xiaomi/wt88047/wt88047:5.1.1/LMY47V/V8.2.1.0.LHJMIDL:user/release-keys");
 
-    ERROR("Setup %s properties done!\n", board_id);
-
-    rc = get_img_version(modem_version, IMG_VER_BUF_LEN);
-    if (!rc) {
-        property_set("gsm.version.baseband", modem_version);
-        ERROR("Detected modem version=%s\n", modem_version);
-    }
-
-    return;
 }
