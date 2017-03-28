@@ -86,7 +86,7 @@ ro.min_freq_0=400000
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Storage
-ro.sys.sdcardfs=true
+ro.sys.sdcardfs=false
 
 # Radio
 persist.data.qmi.adb_logmask=0
@@ -101,6 +101,10 @@ persist.timed.enable=true
 # WiFi
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
+
+# Camera
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # IMS
 persist.radio.jbims=1
