@@ -111,3 +111,6 @@ persist.radio.VT_USE_MDM_TIME=0
 
 # Google assistant
 ro.opa.eligible_device=true
+
+#wt88047 camera sensor list. 
+ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
