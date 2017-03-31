@@ -117,3 +117,6 @@ ro.device.gpu=Adreno 306
 ro.device.rear_cam=8 MP
 ro.device.front_cam=2 MP
 ro.device.screen_res=720x1280
+
+#wt88047 camera sensor list. 
+ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
