@@ -229,7 +229,8 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     Snap \
     libmm-qcamera \
-    libshim_camera
+    libshim_camera \
+    libboringssl-compat
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \

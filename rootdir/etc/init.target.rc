@@ -169,7 +169,7 @@ on init
     export LD_SHIM_LIBS /system/vendor/lib/libWVStreamControlAPI_L3.so|libshim_boringssl.so
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
     
-    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so:/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so"
 
 on property:service.bootanim.exit=1
     # Enable swap
