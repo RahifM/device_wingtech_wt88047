@@ -409,4 +409,7 @@
 
     <!-- Enable NightLight -->
     <bool name="config_nightDisplayAvailable">true</bool>
+
+    <!-- Internal default to navigation bar value -->
+    <bool name="config_defaultToNavigationBar">false</bool>
 </resources>
