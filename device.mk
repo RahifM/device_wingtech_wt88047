@@ -218,7 +218,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
-    libshim_camera
+    libshim_camera \
+    libboringssl-compat
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
