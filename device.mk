@@ -253,10 +253,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_cm
-
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
     libshim_parcel
@@ -315,6 +311,3 @@ endif
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
-
-# Our Kernel Aduitor
-PRODUCT_PACKAGES += KernelAdiutor
