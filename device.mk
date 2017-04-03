@@ -29,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -84,10 +84,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -315,6 +311,3 @@ endif
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
-
-# Our Kernel Aduitor
-PRODUCT_PACKAGES += KernelAdiutor
