@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#FORCE_32_BIT := true
 TW_INCLUDE_CRYPTO := true
 
 DEVICE_PATH := device/wingtech/wt88047
@@ -82,8 +81,8 @@ SYSTEM_PARSE_LEGACY_KERNEL_CMDLINE_BOARDID := true
 TARGET_GCC_VERSION_EXP := 4.9
 
 # Kernel Tool Chain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
