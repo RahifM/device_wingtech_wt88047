@@ -319,9 +319,6 @@ PRODUCT_COPY_FILES += \
 # Root Method
 DEFAULT_ROOT_METHOD := rootless
 
-# Our Kernel Aduitor
-PRODUCT_PACKAGES += KernelAdiutor
-
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
