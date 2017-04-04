@@ -138,8 +138,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl
 
 # Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8916
+#PRODUCT_PACKAGES += \
+#    keystore.msm8916
 
 # Lights
 PRODUCT_PACKAGES += \
