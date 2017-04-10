@@ -94,7 +94,7 @@ void init_target_properties()
         property_set("ro.product.name", "2014818");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
-    } else if (strcmp(board_id, "S88047B2") == 0) {
+    } else if (board_id == "S88047B2") {
         property_set("ro.build.product", "HM2014821");
         property_set("ro.product.device", "HM2014821");
         property_set("ro.product.model", "2014821");
