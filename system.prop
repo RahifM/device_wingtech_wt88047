@@ -102,10 +102,6 @@ persist.timed.enable=true
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
 
-# Camera
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
-
 # IMS
 persist.radio.jbims=1
 persist.radio.ROTATION_ENABLE=1
