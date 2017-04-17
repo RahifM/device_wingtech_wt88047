@@ -85,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -225,8 +221,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8916 \
-    Snap
+    camera.msm8916
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
