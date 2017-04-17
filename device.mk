@@ -29,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -84,10 +84,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=false \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -225,8 +221,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8916 \
-    Snap
+    camera.msm8916
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
