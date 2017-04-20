@@ -85,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
