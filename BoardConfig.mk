@@ -65,7 +65,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
-TARGET_KERNEL_CONFIG := wt88047_kernel_defconfig
+TARGET_KERNEL_CONFIG := wt88047_defconfig
 ifneq ($(FORCE_32_BIT),true)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -82,7 +82,7 @@ SYSTEM_PARSE_LEGACY_KERNEL_CMDLINE_BOARDID := true
 TARGET_GCC_VERSION_EXP := 4.9
 
 # Kernel Tool Chain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/uber/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # ANT+
@@ -118,16 +118,6 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -195,7 +185,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -218,9 +208,6 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Tap-to-Wake
-TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # inherit from the proprietary version
 -include vendor/wingtech/wt88047/BoardConfigVendor.mk
