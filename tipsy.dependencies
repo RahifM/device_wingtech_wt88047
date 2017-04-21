@@ -8,5 +8,10 @@
     "repository": "dirtyredmi2/android_kernel_wingtech_msm8916",
     "target_path": "kernel/wingtech/msm8916",
     "branch": "n64"
+  },
+  {
+    "repository": "Dyne-destroyer/vendor_volte",
+    "target_path": "vendor/volte",
+    "branch": "cm-14.1"
   }
 ]
