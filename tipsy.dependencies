@@ -1,12 +1,12 @@
 [
   {
-    "repository": "premaca/proprietary_vendor_wingtech",
-    "target_path": "vendor/wingtech",
-    "branch": "n7.0-caf"
+    "repository": "redmi2/proprietary_vendor_xiaomi",
+    "target_path": "vendor/xiaomi",
+    "branch": "n64"
   },
   {
-    "repository": "premaca/Xiaomi_Kernel_OpenSource",
+    "repository": "dirtyredmi2/android_kernel_wingtech_msm8916",
     "target_path": "kernel/wingtech/msm8916",
-    "branch": "n7.1"
+    "branch": "n64"
   }
 ]
