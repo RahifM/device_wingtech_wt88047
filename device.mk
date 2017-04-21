@@ -15,6 +15,7 @@
 #
 
 $(call inherit-product-if-exists, vendor/xiaomi/wt88047/wt88047-vendor.mk)
+$(call inherit-product-if-exists, vendor/volte/tomato/tomato-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay

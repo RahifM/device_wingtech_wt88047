@@ -224,3 +224,4 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # inherit from the proprietary version
 -include vendor/xiaomi/wt88047/BoardConfigVendor.mk
+-include vendor/volte/tomato/BoardConfigVendor.mk
