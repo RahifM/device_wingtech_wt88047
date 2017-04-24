@@ -405,8 +405,8 @@
     <bool name="config_carrier_volte_available">true</bool>
     <bool name="config_carrier_vt_available">true</bool>
 
-    <!-- Flag indicating whether round icons should be parsed from the application manifest.
-    <bool name="config_useRoundIcon">true</bool> -->
+    <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
+    <bool name="config_useRoundIcon">true</bool>
 
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response
