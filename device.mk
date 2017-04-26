@@ -29,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -248,10 +248,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Disable all camera debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_cm
 
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
