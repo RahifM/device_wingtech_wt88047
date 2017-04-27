@@ -254,10 +254,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_cm
-
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
     libshim_parcel
@@ -319,9 +315,6 @@ PRODUCT_COPY_FILES += \
 
 # Root Method
 DEFAULT_ROOT_METHOD := rootless
-
-# Our Kernel Aduitor
-PRODUCT_PACKAGES += KernelAdiutor
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
