@@ -81,7 +81,7 @@ SYSTEM_PARSE_LEGACY_KERNEL_CMDLINE_BOARDID := true
 TARGET_GCC_VERSION_EXP := 4.9
 
 # Kernel Tool Chain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # ANT+
