@@ -20,9 +20,6 @@ ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 # Fusion mag field filter
 ro.fusion.magfield.max=250
 
-# Perf
-ro.sys.fw.dex2oat_thread_count=3
-
 # IMS
 net.lte.volte_call_capable=true
 persist.data.iwlan.enable=true
