@@ -2,8 +2,10 @@
 #allow mm-qcamerad system_file:file execmod;
 
 # Adapted from shamu
-allow mm-qcamerad system_data_file:sock_file unlink;
 allow mm-qcamerad sensors_socket:sock_file read;
-
 allow mm-qcamerad system_data_file:dir { write remove_name add_name };
+allow mm-qcamerad camera_prop:property_service set;
+allow mm-qcamerad init:unix_stream_socket connectto;
+allow mm-qcamerad property_socket:sock_file write;
+allow mm-qcamerad system_data_file:dir { add_name remove_name write };
 allow mm-qcamerad system_data_file:sock_file { create unlink };
