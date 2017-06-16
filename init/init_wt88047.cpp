@@ -131,9 +131,4 @@ void init_target_properties()
         property_set("ro.product.name", "2014811");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
-    }
-
-    /* Unified description and fingerprint for now */
-    property_set("ro.build.description", "wt88047-user 5.1.1 LMY47V V8.2.1.0.LHJMIDL release-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/wt88047/wt88047:5.1.1/LMY47V/V8.2.1.0.LHJMIDL:user/release-keys");
 }
