@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo tipsy_wt88047-userdebug
+add_lunch_combo omni_wt88047-userdebug

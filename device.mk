@@ -85,10 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -225,8 +221,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8916 \
-    Snap
+    camera.msm8916
 
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
@@ -252,10 +247,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Disable all camera debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug.mask=0
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_cm
 
 # CNE and DPM symbol
 PRODUCT_PACKAGES += \
@@ -318,9 +309,6 @@ PRODUCT_COPY_FILES += \
 
 # Root Method
 DEFAULT_ROOT_METHOD := rootless
-
-# Our Kernel Aduitor
-PRODUCT_PACKAGES += KernelAdiutor
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
