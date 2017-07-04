@@ -38,7 +38,7 @@ CITRUS_RELEASE := true
 
 # CAF REVISION
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.caf.branch=LA.BR.1.2.9_rb1.14
+    ro.caf.branch=LA.BR.1.2.9_rb1.22
 
 # Citrus-CAF Wt88047 Maintainer
 PRODUCT_BUILD_PROP_OVERRIDES += \
