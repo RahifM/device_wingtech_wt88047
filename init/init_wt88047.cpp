@@ -133,4 +133,5 @@ void init_target_properties()
         property_set("ro.product.name", "2014811");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
+    }
 }
