@@ -119,6 +119,9 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Dex
+WITH_DEXPREOPT := true
+
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
