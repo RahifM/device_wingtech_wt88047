@@ -39,3 +39,7 @@ BUILD_FINGERPRINT=Xiaomi/wt88047/wt88047:5.1.1/LMY47V/V9.2.5.0.LHJMIEK:user/rele
 # Boot Animation
 PRODUCT_COPY_FILES += \
     device/wingtech/wt88047/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+
+# Additional apps
+PRODUCT_PACKAGES += \
+    MatLog

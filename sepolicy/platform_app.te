@@ -1,0 +1,2 @@
+# MatLog calls dmesg
+allow platform_app kernel:system syslog_read;
