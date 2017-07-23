@@ -113,7 +113,6 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.wt88047
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
