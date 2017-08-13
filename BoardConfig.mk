@@ -198,6 +198,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
 TARGET_RIL_VARIANT := caf
+MALLOC_SVELTE := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
