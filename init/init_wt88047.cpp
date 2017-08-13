@@ -27,11 +27,12 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include <android-base/file.h>
-#include <android-base/strings.h>
+#include <cstdlib>
+#include <fstream>
+#include <string>
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+#include <sys/sysinfo.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -40,38 +41,38 @@
 
 #include "init_msm8916.h"
 
-static std::string board_id;
+void property_override(char const prop[], char const value[])
+{
+    prop_info *pi;
 
-static void import_entire_kernel_cmdline(bool in_qemu,
-                           const std::function<void(const std::string&, bool)>& fn) {
-    std::string cmdline;
-    android::base::ReadFileToString("/proc/cmdline", &cmdline);
- 
-    for (const auto& entry : android::base::Split(android::base::Trim(cmdline), " ")) {
-        fn(entry, in_qemu);
-    }
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-static void import_cmdline(const std::string& name, bool for_emulator)
+int is2GB()
 {
-    if(name.empty())
-        return;
-
-    std::string::size_type pos = name.find('=');
-    std::string value = name.substr(pos + 1);
-    if (strstr(name.c_str(),"board_id") != NULL){
-        pos = value.find(':');
-        board_id = value.substr(0,pos);
-    }
+    struct sysinfo sys;
+    sysinfo(&sys);
+    return sys.totalram > 1024ull * 1024 * 1024;
 }
 
 void init_target_properties()
 {
+    std::ifstream fin;
+    std::string buf;
+
     std::string product = property_get("ro.product.name");
-    if (strstr(product.c_str(), "wt88047") == NULL)
+    if (product.find("wt88047") == std::string::npos)
         return;
 
-    import_entire_kernel_cmdline(0, import_cmdline);
+    fin.open("/proc/cmdline");
+    while (std::getline(fin, buf, ' '))
+        if (buf.find("board_id") != std::string::npos)
+            break;
+    fin.close();
 
     /* S88047E1 */
     if (buf.find("S88047E1") != std::string::npos) {
