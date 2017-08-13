@@ -27,7 +27,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
 
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRwODUCT_AAPT_PREF_CONFIG := xhdpi
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
     libantradio
+
+#Permissions
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Charger
 PRODUCT_PACKAGES += \
