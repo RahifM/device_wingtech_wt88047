@@ -325,6 +325,10 @@ ifneq ($(QCPATH),)
 PRODUCT_BOOT_JARS += WfdCommon
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1
+    persist.sys.wfd.virtual=0
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
