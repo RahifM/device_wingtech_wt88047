@@ -43,6 +43,7 @@ ro.qc.sdk.izat.service_mask=0x0
 mm.enable.smoothstreaming=true
 mm.disable.sec_smoothstreaming=true
 media.aac_51_output_enabled=true
+persist.media.treble_omx=false
 drm.service.enabled=1
 
 # Override minimum CPU frequency
