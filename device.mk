@@ -327,7 +327,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     libwcnss_qmi \
-    wcnss_service
+    wcnss_service \
+    libwpa_client
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd.accept:system/etc/hostapd/hostapd.accept \
