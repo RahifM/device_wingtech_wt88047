@@ -1,4 +1,5 @@
 # Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +16,8 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
 
 # Inherit from wt88047 device
 $(call inherit-product, device/wingtech/wt88047/device.mk)
@@ -28,7 +29,7 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 BOARD_VENDOR := wingtech
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := wt88047
-PRODUCT_NAME := cm_wt88047
+PRODUCT_NAME := gzosp_wt88047
 PRODUCT_MANUFACTURER := Wingtech
 PRODUCT_MODEL := Redmi 2
 
