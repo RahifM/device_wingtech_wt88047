@@ -4,6 +4,13 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+# Export calibration library needed dependency headers
+LOCAL_COPY_HEADERS_TO := sensors/inc
+LOCAL_COPY_HEADERS := \
+    CalibrationModule.h \
+    sensors_extension.h \
+    sensors.h
+
 LOCAL_SRC_FILES := \
     sensors.cpp \
     SensorBase.cpp \
