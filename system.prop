@@ -104,13 +104,6 @@ wifi.interface=wlan0
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 
-# IMS
-persist.radio.jbims=1
-persist.radio.ROTATION_ENABLE=1
-persist.radio.VT_ENABLE=1
-persist.radio.VT_HYBRID_ENABLE=1
-persist.radio.VT_USE_MDM_TIME=0
-
 # Hardware Info
 ro.device.chipset=Qualcomm MSM8916 Snapdragon 410
 ro.device.cpu=Quad-core 1.2 GHz Cortex-A53
