@@ -1,5 +1,13 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
+
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=unused-private-field \
+        -Wno-error=strlcpy-strlcat-size \
+        -Wno-error=gnu-designator \
+        -Wno-error=unused-variable \
+        -Wno-error=format
+
 LOCAL_SRC_FILES := \
         QCamera2Factory.cpp \
         QCamera2Hal.cpp \
@@ -17,8 +25,11 @@ LOCAL_SRC_FILES := \
         wrapper/QualcommCamera.cpp
 
 LOCAL_CFLAGS = -Wall -Wextra -Werror
-LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
+
+#use media extension
+#ifeq ($(TARGET_USES_MEDIA_EXTENSIONS), true)
 LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
+#endif
 
 #Debug logs are enabled
 #LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
@@ -29,6 +40,8 @@ LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
 ifneq ($(call is-platform-sdk-version-at-least,18),true)
 LOCAL_CFLAGS += -DUSE_JB_MR1
 endif
+
+LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON
 
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../stack/common \
@@ -41,14 +54,6 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
         $(LOCAL_PATH)/../util \
         $(LOCAL_PATH)/wrapper
-        
-LOCAL_C_INCLUDES += system/media/camera/include
-LOCAL_C_INCLUDES += \
-        $(TARGET_OUT_HEADERS)/qcom/display
-LOCAL_C_INCLUDES += \
-         $(call project-path-for,qcom-display)/libqservice
-LOCAL_C_INCLUDES += \
-        $(call project-path-for,qcom-display)/libgralloc
 
 ifeq ($(call is-platform-sdk-version-at-least,20),true)
 LOCAL_C_INCLUDES += system/media/camera/include
@@ -57,9 +62,9 @@ LOCAL_CFLAGS += -DUSE_KK_CODE
 endif
 
 #ifeq ($(TARGET_USE_VENDOR_CAMERA_EXT),true)
-#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/msm8974/libgralloc
+#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #else
-LOCAL_C_INCLUDES +=  $(call project-path-for,qcom-display)/libgralloc
+LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #endif
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
@@ -81,4 +86,4 @@ LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
 
-#include $(LOCAL_PATH)/test/Android.mk
+include $(LOCAL_PATH)/test/Android.mk

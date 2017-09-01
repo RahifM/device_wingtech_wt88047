@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2015, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2016, The Linux Foundataion. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are
@@ -1108,6 +1108,7 @@ void QCamera2HardwareInterface::video_stream_cb_routine(mm_camera_super_buf_t *s
                                                         void *userdata)
 {
     ATRACE_CALL();
+    QCameraVideoMemory *videoMemObj = NULL;
     CDBG("[KPI Perf] %s : BEGIN", __func__);
     QCamera2HardwareInterface *pme = (QCamera2HardwareInterface *)userdata;
     if (pme == NULL ||
@@ -1135,10 +1136,11 @@ void QCamera2HardwareInterface::video_stream_cb_routine(mm_camera_super_buf_t *s
     nsecs_t timeStamp;
     timeStamp = nsecs_t(frame->ts.tv_sec) * 1000000000LL + frame->ts.tv_nsec;
     CDBG("Send Video frame to services/encoder TimeStamp : %lld", timeStamp);
-    QCameraMemory *videoMemObj = (QCameraMemory *)frame->mem_info;
+    videoMemObj = (QCameraVideoMemory *)frame->mem_info;
     camera_memory_t *video_mem = NULL;
     if (NULL != videoMemObj) {
         video_mem = videoMemObj->getMemory(frame->buf_idx, (pme->mStoreMetaDataInFrame > 0)? true : false);
+        videoMemObj->updateNativeHandle(frame->buf_idx);
     }
     if (NULL != videoMemObj && NULL != video_mem) {
         pme->dumpFrameToFile(stream, frame, QCAMERA_DUMP_FRM_VIDEO);
@@ -1795,7 +1797,7 @@ void QCamera2HardwareInterface::dumpJpegToFile(const void *data,
                 if (file_fd >= 0) {
                     ssize_t written_len = write(file_fd, data, size);
                     fchmod(file_fd, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-                    CDBG_HIGH("%s: written number of bytes %zd\n", __func__, written_len);
+                    CDBG_HIGH("%s: written number of bytes %d\n", __func__, written_len);
                     close(file_fd);
                 } else {
                     ALOGE("%s: fail t open file for image dumping", __func__);
@@ -2018,7 +2020,7 @@ void QCamera2HardwareInterface::dumpFrameToFile(QCameraStream *stream,
                             }
                         }
 
-                        CDBG_HIGH("%s: written number of bytes %zd\n", __func__, written_len);
+                        CDBG_HIGH("%s: written number of bytes %d\n", __func__, written_len);
                         close(file_fd);
                     } else {
                         ALOGE("%s: fail t open file for image dumping", __func__);
@@ -2164,6 +2166,32 @@ bool QCameraCbNotifier::matchSnapshotNotifications(void *data,
 
     return false;
 }
+
+/*===========================================================================
+* FUNCTION   : matchTimestampNotifications
+*
+* DESCRIPTION: matches timestamp data callbacks
+*
+* PARAMETERS :
+*   @data      : data to match
+*   @user_data : context data
+*
+* RETURN     : bool match
+*              true - match found
+*              false- match not found
+*==========================================================================*/
+bool QCameraCbNotifier::matchTimestampNotifications(void *data, void * /*user_data*/)
+{
+    qcamera_callback_argm_t *arg = ( qcamera_callback_argm_t * ) data;
+    if (NULL != arg) {
+        if ((QCAMERA_DATA_TIMESTAMP_CALLBACK == arg->cb_type) &&
+            (CAMERA_MSG_VIDEO_FRAME == arg->msg_type)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 /*===========================================================================
  * FUNCTION   : cbNotifyRoutine
@@ -2408,6 +2436,29 @@ void QCameraCbNotifier::setCallbacks(camera_notify_callback notifyCb,
               __func__);
     }
 }
+
+/*===========================================================================
+* FUNCTION   : flushVideoNotifications
+*
+* DESCRIPTION: flush all pending video notifications
+*              from the notifier queue
+*
+* PARAMETERS : None
+*
+* RETURN     : int32_t type of status
+*              NO_ERROR  -- success
+*              none-zero failure code
+*==========================================================================*/
+int32_t QCameraCbNotifier::flushVideoNotifications()
+{
+    if (!mActive) {
+        ALOGE("notify thread is not active");
+        return UNKNOWN_ERROR;
+    }
+    mDataQ.flushNodes(matchTimestampNotifications);
+    return NO_ERROR;
+}
+
 
 /*===========================================================================
  * FUNCTION   : startSnapshots

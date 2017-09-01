@@ -4,6 +4,11 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_CLANG_CFLAGS += \
+        -Wno-error=memsize-comparison \
+        -Wno-error=missing-field-initializers \
+        -Wno-error=pointer-bool-conversion
+
 MM_CAM_FILES := \
         src/mm_camera_interface.c \
         src/mm_camera.c \
@@ -34,7 +39,7 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-LOCAL_C_INCLUDES += hardware/qcom/media/mm-core/inc
+LOCAL_C_INCLUDES += $(call project-path-for,qcom-media)/mm-core/inc
 ifeq ($(call is-platform-sdk-version-at-least,20),true)
 LOCAL_C_INCLUDES += system/media/camera/include
 endif

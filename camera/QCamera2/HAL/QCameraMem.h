@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2015, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2016, The Linux Foundataion. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -39,6 +39,9 @@ extern "C" {
 #include <linux/msm_ion.h>
 #include <mm_camera_interface.h>
 }
+
+//OFFSET, SIZE, USAGE, TIMESTAMP, FORMAT
+#define VIDEO_METADATA_NUM_INTS 5
 
 namespace qcamera {
 
@@ -161,6 +164,7 @@ private:
 class QCameraStreamMemory : public QCameraMemory {
 public:
     QCameraStreamMemory(camera_request_memory getMemory,
+                        void* cbCookie,
                         bool cached,
                         QCameraMemoryPool *pool = NULL,
                         cam_stream_type_t streamType = CAM_STREAM_TYPE_DEFAULT);
@@ -177,6 +181,7 @@ public:
 
 protected:
     camera_request_memory mGetMemory;
+    void* mCallbackCookie;
     camera_memory_t *mCameraMemory[MM_CAMERA_MAX_NUM_FRAMES];
 };
 
@@ -184,7 +189,8 @@ protected:
 // framework. They are allocated from /dev/ion or gralloc.
 class QCameraVideoMemory : public QCameraStreamMemory {
 public:
-    QCameraVideoMemory(camera_request_memory getMemory, bool cached);
+    QCameraVideoMemory(camera_request_memory getMemory,
+            void* cbCookie, bool cached);
     virtual ~QCameraVideoMemory();
 
     virtual int allocate(uint8_t count, size_t size);
@@ -192,11 +198,15 @@ public:
     virtual void deallocate();
     virtual camera_memory_t *getMemory(uint32_t index, bool metadata) const;
     virtual int getMatchBufIndex(const void *opaque, bool metadata) const;
+    native_handle_t *updateNativeHandle(uint32_t index, bool metadata = true);
+    int closeNativeHandle(const void *data, bool metadata = true);
+    static int closeNativeHandle(const void *data);
 
 private:
     camera_memory_t *mMetadata[MM_CAMERA_MAX_NUM_FRAMES];
+    uint8_t mMetaBufCount;
+    native_handle_t *mNativeHandle[MM_CAMERA_MAX_NUM_FRAMES];
 };
-;
 
 // Gralloc Memory is acquired from preview window
 class QCameraGrallocMemory : public QCameraMemory {
@@ -205,7 +215,7 @@ class QCameraGrallocMemory : public QCameraMemory {
         BUFFER_OWNED,
     };
 public:
-    QCameraGrallocMemory(camera_request_memory getMemory);
+    QCameraGrallocMemory(camera_request_memory getMemory, void* cbCookie);
     void setNativeWindow(preview_stream_ops_t *anw);
     virtual ~QCameraGrallocMemory();
 
@@ -233,6 +243,7 @@ private:
     preview_stream_ops_t *mWindow;
     int mWidth, mHeight, mFormat, mStride, mScanline, mMaxFPS;
     camera_request_memory mGetMemory;
+    void* mCallbackCookie;
     camera_memory_t *mCameraMemory[MM_CAMERA_MAX_NUM_FRAMES];
     int mMinUndequeuedBuffers;
 };
