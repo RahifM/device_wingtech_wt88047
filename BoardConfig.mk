@@ -231,4 +231,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+include vendor/wingtech/wt88047/BoardConfigVendor.mk
