@@ -1,7 +1,10 @@
 /*
    Copyright (c) 2016, The Linux Foundation. All rights reserved.
    Copyright (C) 2016, The CyanogenMod Project
-   Copyright (C) 2015, Ketut P. Kumajaya
+   Copyright (C) 2015-2016, Ketut P. Kumajaya
+   Copyright (C) 2016-2017, Nikolai Petrenko
+   Copyright (C) 2017, The LineageOS Project
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -14,6 +17,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -34,12 +38,16 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+
 #include "property_service.h"
-#include "log.h"
+#include "vendor_init.h"
+
 #include "util.h"
 
 #include "init_msm8916.h"
+
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -63,9 +71,10 @@ void init_target_properties()
 {
     std::ifstream fin;
     std::string buf;
+    std::string product;
 
-    std::string product = property_get("ro.product.name");
-    if (product.find("wt88047") == std::string::npos)
+    product = GetProperty("ro.product.name", "");
+    if (product != "wt88047")
         return;
 
     fin.open("/proc/cmdline");
@@ -97,7 +106,6 @@ void init_target_properties()
         property_override("ro.product.model", "2014818");
         property_override("ro.product.name", "2014818");
         property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
         property_set("persist.dbg.volte_avail_ovr", "1");
         property_set("persist.dbg.vt_avail_ovr", "1");
     }
@@ -144,6 +152,12 @@ void init_target_properties()
         property_override("ro.product.model", "2014811");
         property_override("ro.product.name", "2014811");
         property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
     }
+
+    property_set("dalvik.vm.heapstartsize", "8m");
+    property_set("dalvik.vm.heapgrowthlimit", is2GB() ? "192m" : "96m");
+    property_set("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
+    property_set("dalvik.vm.heaptargetutilization", "0.75");
+    property_set("dalvik.vm.heapminfree", is2GB() ? "512k" : "2m");
+    property_set("dalvik.vm.heapmaxfree", "8m");
 }
