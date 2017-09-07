@@ -13,10 +13,6 @@ audio.offload.pcm.24bit.enable=true
 use.voice.path.for.pcm.voip=true
 vidc.enc.narrow.searchrange=1
 
-# Bluetooth
-ro.qualcomm.bt.hci_transport=smd
-qcom.bluetooth.soc=smd
-
 # dex2oat
 dalvik.vm.dex2oat-filter=interpret-only
 dalvik.vm.image-dex2oat-filter=speed

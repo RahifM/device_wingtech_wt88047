@@ -395,6 +395,14 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=smd \
+    ro.bluetooth.dun=true \
+    ro.bluetooth.hfp.ver=1.7 \
+    ro.bluetooth.sap=true \
+    ro.qualcomm.bt.hci_transport=smd
+
 # HIDL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
