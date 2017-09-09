@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Grab em APNs
+PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
-# Inherit some common Tesla stuff.
-$(call inherit-product, vendor/tipsy/config/common_full_phone.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from wt88047 device
 $(call inherit-product, device/wingtech/wt88047/device.mk)
@@ -28,7 +28,7 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 BOARD_VENDOR := wingtech
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := wt88047
-PRODUCT_NAME := tipsy_wt88047
+PRODUCT_NAME := aosp_wt88047
 PRODUCT_MANUFACTURER := Wingtech
 PRODUCT_MODEL := Redmi 2
 
