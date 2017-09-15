@@ -294,7 +294,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0
 
 # Telephony-ext
-PRODUCT_PACKAGES += telephony-ext
+PRODUCT_PACKAGES += telephony-ext ims-ext-common
 PRODUCT_BOOT_JARS += telephony-ext
 
 # RIL
@@ -351,6 +351,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+
+# IMS
+PRODUCT_PACKAGES += \
+    ims \
+    imscmlibrary \
+    imssettings \
+    init.qti.ims.sh
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ims/imscm.xml:system/etc/permissions/imscm.xml \
+    $(LOCAL_PATH)/configs/ims/ims.xml:system/etc/permissions/ims.xml \
+    $(LOCAL_PATH)/configs/ims/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # DRM
 PRODUCT_PACKAGES += \
