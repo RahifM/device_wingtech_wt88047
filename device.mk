@@ -176,8 +176,8 @@ PRODUCT_PACKAGES += \
     lights.msm8916
 
 # Widevine DRM symbol, boringssl-compat subset
-PRODUCT_PACKAGES += \
-    libshim_boringssl
+#PRODUCT_PACKAGES += \
+#    libshim_boringssl
 
 # Media
 PRODUCT_COPY_FILES += \
