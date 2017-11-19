@@ -86,7 +86,7 @@ ro.min_freq_0=400000
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Storage
-#ro.sys.sdcardfs=false
+ro.sys.sdcardfs=true
 
 # Radio
 persist.data.qmi.adb_logmask=0
