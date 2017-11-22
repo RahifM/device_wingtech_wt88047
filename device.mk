@@ -323,3 +323,7 @@ DEFAULT_ROOT_METHOD := rootless
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# lock dat shit from rotatin'
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.setupwizard.rotation_locked=true
