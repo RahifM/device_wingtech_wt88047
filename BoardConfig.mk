@@ -218,6 +218,7 @@ MALLOC_SVELTE := true
 TARGET_HAVE_SIGNED_VENUS_FW := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_QCOM_MEDIA_VARIANT := caf-msm8916
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -235,3 +236,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
+
+TARGET_USES_QCOM_BSP := true
