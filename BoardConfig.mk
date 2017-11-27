@@ -23,8 +23,10 @@ include $(DEVICE_PATH)/board/*.mk
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
 
-# Hals [TEMP]
+#[TEMP][DNM][Whatever][Ain't nobody gonna look it up anyway but these have to go, gonna move em to 8916-common soon™]
 TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8916
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8916
 TARGET_QCOM_MEDIA_VARIANT := caf-msm8916
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_USES_QCOM_BSP := true
