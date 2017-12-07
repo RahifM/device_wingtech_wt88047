@@ -38,12 +38,21 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+#include <android-base/logging.h>
+
+//#include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
 #include "init_msm8916.h"
+
+namespace android {
+namespace init {
+
+using android::base::GetProperty;
+using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
@@ -67,9 +76,10 @@ void init_target_properties()
 {
     std::ifstream fin;
     std::string buf;
+    std::string product;
 
-    std::string product = property_get("ro.product.name");
-    if (product.find("wt88047") == std::string::npos)
+    product = GetProperty("ro.product.name", "");
+    if (product != "wt88047")
         return;
 
     fin.open("/proc/cmdline");
@@ -156,3 +166,5 @@ void init_target_properties()
     property_set("dalvik.vm.heapminfree", is2GB() ? "512k" : "2m");
     property_set("dalvik.vm.heapmaxfree", "8m");
 }
+}  // namespace init
+}  // namespace android
