@@ -217,5 +217,7 @@
    </string-array>
 
    <bool name="config_nightDisplayAvailable">false</bool>
+   <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+   <bool name="config_displayBlanksAfterDoze">true</bool>
 
 </resources>
