@@ -133,6 +133,14 @@ PRODUCT_PACKAGES += \
 # System Properties
 $(call inherit-product, device/wingtech/wt88047_64/system_prop.mk)
 
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/vendor/etc/thermal-engine.conf
@@ -160,7 +168,3 @@ PRODUCT_PACKAGES += \
 
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
-
-# Telephony
-PRODUCT_PACKAGES += telephony-ext
-PRODUCT_BOOT_JARS += telephony-ext
