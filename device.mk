@@ -31,5 +31,9 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 
 # Telephony
-PRODUCT_PACKAGES += telephony-ext
-PRODUCT_BOOT_JARS += telephony-ext
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext \
