@@ -133,6 +133,13 @@ PRODUCT_PACKAGES += \
 # System Properties
 $(call inherit-product, device/wingtech/wt88047_64/system_prop.mk)
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/vendor/etc/thermal-engine.conf
