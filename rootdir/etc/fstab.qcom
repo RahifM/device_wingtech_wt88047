@@ -2,8 +2,8 @@
 # The filesystem that contains the filesystem e2fsck binary (typically /system) cannot
 # specify 'check', and must come before any filesystems that do specify 'check'
 
-/dev/block/bootdevice/by-name/userdata       /data        f2fs    noatime,nosuid,nodev,inline_xattr                           wait,check,formattable,encryptable=footer
-/dev/block/bootdevice/by-name/userdata       /data        ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc              wait,check,formattable,encryptable=footer
+/dev/block/bootdevice/by-name/userdata       /data        f2fs    noatime,nosuid,nodev,inline_xattr                           latemount,wait,check,formattable,encryptable=footer
+/dev/block/bootdevice/by-name/userdata       /data        ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc              latemount,wait,check,formattable,encryptable=footer
 /dev/block/bootdevice/by-name/cache          /cache       f2fs    noatime,nosuid,nodev,inline_xattr                           wait,check,formattable
 /dev/block/bootdevice/by-name/cache          /cache       ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc              wait,check,formattable
 /dev/block/bootdevice/by-name/persist        /persist     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc              wait
