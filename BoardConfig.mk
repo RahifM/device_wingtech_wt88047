@@ -82,5 +82,8 @@ TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib64/lib-imscamera.so|libshims_camera.so \
     /system/vendor/lib64/lib-imsvt.so|libshims_ims.so
 
+# Shipping API level (for CTS backward compatibility)
+PRODUCT_SHIPPING_API_LEVEL := 19
+
 # inherit from the proprietary version
 include vendor/wingtech64/wt88047_64/BoardConfigVendor.mk
