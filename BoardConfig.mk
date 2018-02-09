@@ -126,14 +126,14 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Dex
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+#/ifeq ($(HOST_OS),linux)
+#  ifeq ($(TARGET_BUILD_VARIANT),user)
+#    ifeq ($(WITH_DEXPREOPT),)
+#      WITH_DEXPREOPT := false
+#    endif
+#  endif
+#endif
+#WITH_DEXPREOPT_BOOT_IMG_ONLY ?= false
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
