@@ -501,6 +501,7 @@ int NativeSensorManager::getDataInfo() {
 				virtualSensorList[POCKET])) {
 			addDependency(&context[mSensorCount], sensor_proximity.handle);
 			addDependency(&context[mSensorCount], sensor_light.handle);
+			context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 			mSensorCount++;
 		}
 	}
@@ -516,6 +517,7 @@ int NativeSensorManager::getDataInfo() {
 					virtualSensorList[ORIENTATION])) {
 			addDependency(&context[mSensorCount], sensor_acc.handle);
 			addDependency(&context[mSensorCount], sensor_mag.handle);
+			context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 			mSensorCount++;
 		}
 
@@ -531,6 +533,7 @@ int NativeSensorManager::getDataInfo() {
 						virtualSensorList[PSEUDO_GYROSCOPE])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
 				addDependency(&context[mSensorCount], sensor_mag.handle);
+				context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 				mSensorCount++;
 			}
 #endif
@@ -541,6 +544,7 @@ int NativeSensorManager::getDataInfo() {
 						virtualSensorList[LINEAR_ACCELERATION])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
 				addDependency(&context[mSensorCount], sensor_mag.handle);
+				context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 				mSensorCount++;
 			}
 
@@ -551,6 +555,7 @@ int NativeSensorManager::getDataInfo() {
 						virtualSensorList[ROTATION_VECTOR])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
 				addDependency(&context[mSensorCount], sensor_mag.handle);
+				context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 				mSensorCount++;
 			}
 
@@ -561,6 +566,7 @@ int NativeSensorManager::getDataInfo() {
 						virtualSensorList[GRAVITY])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
 				addDependency(&context[mSensorCount], sensor_mag.handle);
+				context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 				mSensorCount++;
 			}
 		}
@@ -573,6 +579,7 @@ int NativeSensorManager::getDataInfo() {
 		if (!initVirtualSensor(&context[mSensorCount], SENSORS_HANDLE(mSensorCount),
 					sensor_mag)) {
 			addDependency(&context[mSensorCount], sensor_mag.handle);
+			context[mSensorCount].sensor->stringType = sensorTypeToSensorString(SENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED);
 			mSensorCount++;
 		}
 	}
@@ -582,6 +589,7 @@ int NativeSensorManager::getDataInfo() {
 		if (!initVirtualSensor(&context[mSensorCount], SENSORS_HANDLE(mSensorCount),
 					sensor_gyro)) {
 			addDependency(&context[mSensorCount], sensor_gyro.handle);
+			context[mSensorCount].sensor->stringType = sensorTypeToSensorString(SENSOR_TYPE_GYROSCOPE_UNCALIBRATED);
 			mSensorCount++;
 		}
 	}
@@ -592,6 +600,7 @@ int NativeSensorManager::getDataInfo() {
 					virtualSensorList[GAME_ROTATION_VECTOR])) {
 			addDependency(&context[mSensorCount], sensor_acc.handle);
 			addDependency(&context[mSensorCount], sensor_gyro.handle);
+			context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 			mSensorCount++;
 		}
 	}
@@ -881,6 +890,7 @@ int NativeSensorManager::getSensorListInner()
 			list->sensor->maxDelay = list->sensor->maxDelay * 1000; /* milliseconds to microseconds */
 #endif
 		list->sensor->handle = SENSORS_HANDLE(number);
+		list->sensor->stringType = sensorTypeToSensorString(list->sensor->type);
 
 		strlcpy(nodename, "", SYSFS_MAXLEN);
 		strlcpy(list->enable_path, devname, PATH_MAX);
@@ -888,8 +898,8 @@ int NativeSensorManager::getSensorListInner()
 		/* initialize data path */
 		strlcpy(nodename, "device", SYSFS_MAXLEN);
 
-		if (getEventPath(devname, list->data_path) == -ENODEV) {
-			getEventPathOld(list, list->data_path);
+		if (getEventPathOld(list, list->data_path)) {
+                        getEventPath(devname, list->data_path);
 		}
 
 		number++;
