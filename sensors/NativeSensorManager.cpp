@@ -459,7 +459,7 @@ int NativeSensorManager::getDataInfo() {
 				has_proximity = 1;
 #if defined(SENSORS_DEVICE_API_VERSION_1_3)
 				/* reporting mode fix up */
-				list->sensor->flags |= SENSOR_FLAG_ON_CHANGE_MODE;
+				list->sensor->flags |= SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE;
 #endif
 				list->driver = new ProximitySensor(list);
 				sensor_proximity = *(list->sensor);
@@ -477,6 +477,12 @@ int NativeSensorManager::getDataInfo() {
 				has_gyro = 1;
 				list->driver = new GyroSensor(list);
 				sensor_gyro = *(list->sensor);
+				break;
+			case SENSOR_TYPE_PRESSURE:
+				list->driver = new PressureSensor(list);
+				break;
+			case SENSOR_TYPE_SIGNIFICANT_MOTION:
+				list->driver = new SmdSensor(list);
 				break;
 			default:
 				list->driver = NULL;
@@ -528,6 +534,7 @@ int NativeSensorManager::getDataInfo() {
 			 * magnetometer. Some sensor vendors provide such implementations. The pseudo
 			 * gyroscope sensor is low cost but the performance is worse than the actual
 			 * gyroscope. So disable it for the system with actual gyroscope. */
+#ifdef ENABLE_DEPRECATED_VITRUAL_SENSOR
 			if (!initVirtualSensor(&context[mSensorCount], SENSORS_HANDLE(mSensorCount),
 						virtualSensorList[PSEUDO_GYROSCOPE])) {
 				addDependency(&context[mSensorCount], sensor_acc.handle);
@@ -535,6 +542,7 @@ int NativeSensorManager::getDataInfo() {
 				context[mSensorCount].sensor->stringType = sensorTypeToSensorString(context[mSensorCount].sensor->type);
 				mSensorCount++;
 			}
+#endif
 			compositeVirtualSensorName(sensor_mag.name, virtualSensorName[LINEAR_ACCELERATION], SENSOR_TYPE_LINEAR_ACCELERATION);
 			ALOGD("liear acceleration virtual sensor name changed to %s\n", virtualSensorName[LINEAR_ACCELERATION]);
 			/* For linear acceleration */

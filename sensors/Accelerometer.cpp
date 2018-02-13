@@ -53,7 +53,6 @@ AccelSensor::AccelSensor()
 	  mInputReader(4),
 	  mHasPendingEvent(false),
 	  mAbsEventReceived(false),
-
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);
@@ -67,6 +66,14 @@ AccelSensor::AccelSensor()
 		strlcat(input_sysfs_path, input_name, sizeof(input_sysfs_path));
 		strlcat(input_sysfs_path, SYSFS_I2C_SLAVE_PATH, sizeof(input_sysfs_path));
 		input_sysfs_path_len = strlen(input_sysfs_path);
+#ifdef TARGET_8610
+		if (access(input_sysfs_path, F_OK)) {
+			input_sysfs_path_len -= strlen(SYSFS_I2C_SLAVE_PATH);
+			strlcpy(&input_sysfs_path[input_sysfs_path_len],
+					SYSFS_INPUT_DEV_PATH, SYSFS_MAXLEN);
+			input_sysfs_path_len += strlen(SYSFS_INPUT_DEV_PATH);
+		}
+#endif
 		enable(0, 1);
 	}
 }
@@ -76,7 +83,6 @@ AccelSensor::AccelSensor(char *name)
 	  mInputReader(4),
 	  mHasPendingEvent(false),
 	  mAbsEventReceived(false),
-
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);
@@ -100,7 +106,6 @@ AccelSensor::AccelSensor(SensorContext *context)
 	  mInputReader(4),
 	  mHasPendingEvent(false),
 	  mAbsEventReceived(false),
-
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);

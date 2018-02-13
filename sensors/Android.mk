@@ -20,10 +20,12 @@ LOCAL_SRC_FILES := \
     Accelerometer.cpp \
     Gyroscope.cpp \
     InputEventReader.cpp \
+    Bmp180.cpp \
     CalibrationManager.cpp \
     NativeSensorManager.cpp \
     VirtualSensor.cpp \
-    sensors_XML.cpp
+    sensors_XML.cpp \
+    SignificantMotion.cpp
 
 LOCAL_CFLAGS += -DLOG_TAG=\"Sensors\"
 
