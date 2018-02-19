@@ -2,7 +2,8 @@
    Copyright (c) 2016, The Linux Foundation. All rights reserved.
    Copyright (C) 2016, The CyanogenMod Project
    Copyright (C) 2015-2016, Ketut P. Kumajaya
-   Copyright (C) 2017-2018, The LineageOS Project
+   Copyright (C) 2016-2017, Nikolai Petrenko
+   Copyright (C) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -37,17 +38,12 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
-#include <android-base/properties.h>
-
-#include "property_service.h"
 #include "vendor_init.h"
-
+#include "property_service.h"
+#include "log.h"
 #include "util.h"
 
 #include "init_msm8916.h"
-
-using android::base::GetProperty;
-using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
 {
@@ -71,10 +67,9 @@ void init_target_properties()
 {
     std::ifstream fin;
     std::string buf;
-    std::string product;
 
-    product = GetProperty("ro.product.name", "");
-    if (product != "wt88047")
+    std::string product = property_get("ro.product.name");
+    if (product.find("wt88047") == std::string::npos)
         return;
 
     fin.open("/proc/cmdline");
