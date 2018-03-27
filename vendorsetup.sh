@@ -1,0 +1,1 @@
+add_lunch_combo aosp_wt88047-userdebug
