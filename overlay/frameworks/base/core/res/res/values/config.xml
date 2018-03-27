@@ -208,4 +208,7 @@
         <item>"/data/dalvik-cache/arm/system@framework@boot.oat"</item>
         <item>"/data/dalvik-cache/arm/system@framework@services.jar@classes.dex"</item>
    </string-array>
+
+   <!-- What am i doing? :'3 -->
+   <integer name="config_deviceHardwareKeys">19</integer>
 </resources>
