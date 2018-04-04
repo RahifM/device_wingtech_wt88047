@@ -22,3 +22,6 @@ include $(DEVICE_PATH)/board/*.mk
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
+include device/wingtech/wt88047/radio.mk
+
+AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true

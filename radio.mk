@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2016 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,17 +14,20 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/wingtech/wt88047/wt88047-vendor.mk)
-$(call inherit-product, vendor/wingtech/volte/volte.mk)
-$(call inherit-product, vendor/wingtech/volte/wt88047/wt88047-vendor.mk)
+LOCAL_PATH := $(call my-dir)
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+include $(CLEAR_VARS)
 
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
+#----------------------------------------------------------------------
+# Radio image
+#----------------------------------------------------------------------
+ifeq ($(ADD_RADIO_FILES), true)
+radio_dir := $(LOCAL_PATH)/radio
+RADIO_FILES := $(shell cd $(radio_dir) ; ls)
+$(foreach f, $(RADIO_FILES), \
+    $(call add-radio-file,radio/$(f)))
+endif
 
-# Inherit the rest from msm8916-common
-$(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
+
+# Proprietary
+$(call add-radio-file,../../../vendor/volte/wt88047/radio/NON-HLOS.bin)
