@@ -17,3 +17,4 @@
 /* TODO: Actually provide implementations for these function! */
 
 void _ZNK7android11MediaBuffer8refcountEv() {}
+void _ZN10CneFactory23CreateCneNetworkRequestE10CnoNetTypeP27ICneNetworkObserverNotifier17CnoSimSlotIdxType() {}
