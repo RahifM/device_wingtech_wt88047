@@ -7,4 +7,5 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera2_sensor_modules.so|libshim_camera.so \
     /system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_camera.so \
     /system/vendor/lib/libmmcamera2_stats_modules.so|libshim_camera.so \
-    /system/vendor/lib/lib-imsvt.so|libshims_ims.so
+    /system/vendor/lib/lib-imsvt.so|libshims_ims.so \
+    /system/vendor/bin/imsdatadaemon|libshims_ims.so
