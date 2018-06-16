@@ -41,9 +41,8 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
-//#include "vendor_init.h"
+#include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
 #include "util.h"
 
 #include "init_msm8916.h"
@@ -51,7 +50,6 @@
 namespace android {
 namespace init {
 
-using android::base::GetProperty;
 using android::init::property_set;
 
 void property_override(char const prop[], char const value[])
@@ -77,10 +75,6 @@ void init_target_properties()
     std::ifstream fin;
     std::string buf;
     std::string product;
-
-    product = GetProperty("ro.product.name", "");
-    if (product != "wt88047")
-        return;
 
     fin.open("/proc/cmdline");
     while (std::getline(fin, buf, ' '))
