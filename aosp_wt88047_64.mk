@@ -16,7 +16,7 @@
 $(call inherit-product, device/wingtech/wt88047_64/full_wt88047_64.mk)
 
 # Grab APNs
-PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES += device/wingtech/wt88047/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
