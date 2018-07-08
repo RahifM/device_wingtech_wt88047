@@ -5,7 +5,7 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
     libshim_camera \
-    Snap
+    GoogleCamera-v2.7
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -16,4 +16,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
     persist.camera.hal.debug.mask=0 \
-    ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
+    ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq \
+    persist.camera.HAL3.enabled=1
