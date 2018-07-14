@@ -40,3 +40,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     Terminal \
     WallpaperPicker
+
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    device/wingtech/wt88047/prebuilt/bootanimation.zip:system/media/bootanimation.zip
