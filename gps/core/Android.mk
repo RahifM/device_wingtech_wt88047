@@ -8,6 +8,10 @@ LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
+ifeq ($(QCPATH),)
+LOCAL_CFLAGS += -DOSS_BUILD
+endif
+
 LOCAL_SHARED_LIBRARIES := \
     liblog \
     libutils \
