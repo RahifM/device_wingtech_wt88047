@@ -77,6 +77,9 @@ TARGET_HAS_NO_POWER_STATS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_NO_SECURE_DISCARD := true
 
+# Security Patch Level
+VENDOR_SECURITY_PATCH := 2017-01-01
+
 # SELinux
 include vendor/omni/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
