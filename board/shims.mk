@@ -1,5 +1,5 @@
 # Shims
-TARGET_LD_SHIM_LIBS := \
+TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
     /system/vendor/lib/libmmcamera2_cpp_module.so|libshim_camera.so \
     /system/vendor/lib/libmmcamera2_isp_modules.so|libshim_camera.so \
