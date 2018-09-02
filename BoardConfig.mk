@@ -22,3 +22,6 @@ include $(DEVICE_PATH)/board/*.mk
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
+
+# Preloading QPerformance jar to ensure faster perflocks in Boost Framework
+PRODUCT_BOOT_JARS += QPerformance
