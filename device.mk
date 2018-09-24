@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/wingtech/wt88047/wt88047-vendor.mk)
+$(call inherit-product, vendor/wingtech64/wt88047_64/wt88047_64-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -108,7 +108,7 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     libcalmodule_common \
     sensors.msm8916 \
-    sensors.wt88047
+    sensors.wt88047_64
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
