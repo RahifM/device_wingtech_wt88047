@@ -35,7 +35,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="wt88047-user 5.1.1 LMY47V V9.2.5.0.LHJMIEK release-keys"
 
 BUILD_FINGERPRINT=Xiaomi/wt88047/wt88047:5.1.1/LMY47V/V9.2.5.0.LHJMIEK:user/release-key
-
-# Boot Animation
-PRODUCT_COPY_FILES += \
-    device/wingtech/wt88047/prebuilt/bootanimation.zip:system/media/bootanimation.zip
