@@ -217,7 +217,7 @@
    </string-array>
 
    <bool name="config_nightDisplayAvailable">false</bool>
-   <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
-   <bool name="config_displayBlanksAfterDoze">true</bool>
+
+   <integer name="config_deviceHardwareKeys">19</integer>
 
 </resources>
