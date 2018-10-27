@@ -34,7 +34,6 @@ class AccelSensor : public SensorBase {
 	InputEventCircularReader mInputReader;
 	sensors_event_t mPendingEvent;
 	bool mHasPendingEvent;
-	bool mAbsEventReceived;
 	int64_t mEnabledTime;
 
 	int setInitialState();

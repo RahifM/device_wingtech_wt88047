@@ -33,7 +33,6 @@
 
 #define FETCH_FULL_EVENT_BEFORE_RETURN 	1
 #define IGNORE_EVENT_TIME 				350000000
-#define SAMPLE_DROP_PERIOD_NS		30000000
 
 #define	EVENT_TYPE_GYRO_X	ABS_RX
 #define	EVENT_TYPE_GYRO_Y	ABS_RY
@@ -50,7 +49,6 @@ GyroSensor::GyroSensor()
 	: SensorBase(NULL, GYRO_INPUT_DEV_NAME),
 	  mInputReader(4),
 	  mHasPendingEvent(false),
-	  mIsFirstTimestamp(false),
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);
@@ -72,7 +70,6 @@ GyroSensor::GyroSensor(struct SensorContext *context)
 	: SensorBase(NULL, NULL, context),
 	  mInputReader(4),
 	  mHasPendingEvent(false),
-	  mIsFirstTimestamp(false),
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);
@@ -95,7 +92,6 @@ GyroSensor::GyroSensor(char *name)
 	: SensorBase(NULL, GYRO_INPUT_DEV_NAME),
 	  mInputReader(4),
 	  mHasPendingEvent(false),
-	  mIsFirstTimestamp(false),
 	  mEnabledTime(0)
 {
 	mPendingEvent.version = sizeof(sensors_event_t);
@@ -196,7 +192,6 @@ int GyroSensor::setDelay(int32_t, int64_t delay_ns)
 		char buf[80];
 		snprintf(buf, sizeof(buf), "%d", delay_ms);
 		write(fd, buf, strlen(buf)+1);
-		mIsFirstTimestamp = false;
 		close(fd);
 		return 0;
 	}
@@ -229,7 +224,6 @@ int GyroSensor::readEvents(sensors_event_t* data, int count)
 	int numEventReceived = 0;
 	input_event const* event;
 	sensors_event_t raw, result;
-	int64_t first_timestamp;
 
 #if FETCH_FULL_EVENT_BEFORE_RETURN
 again:
@@ -282,10 +276,6 @@ again:
 					data->sensor = mPendingEvent.sensor;
 					data->type = SENSOR_TYPE_GYROSCOPE;
 					data->timestamp = mPendingEvent.timestamp;
-					if (!mIsFirstTimestamp) {
-						first_timestamp = data->timestamp;
-						mIsFirstTimestamp = true;
-					}
 					/* The raw data is stored inside sensors_event_t.data after
 					 * sensors_event_t.gyroscope. Notice that the raw data is
 					 * required to composite the virtual sensor uncalibrated
@@ -298,11 +288,9 @@ again:
 					data->data[4] = mPendingEvent.data[0];
 					data->data[5] = mPendingEvent.data[1];
 					data->data[6] = mPendingEvent.data[2];
-					if ((data->timestamp - first_timestamp) > SAMPLE_DROP_PERIOD_NS) {
-						data++;
-						numEventReceived++;
-						count--;
-					}
+					data++;
+					numEventReceived++;
+					count--;
 				break;
 			}
 		} else {
