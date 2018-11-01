@@ -153,3 +153,7 @@ PRODUCT_PACKAGES += \
 
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
+
+# Privileged permissions whitelist
+PRODUCT_COPY_FILES += \
+    device/wingtech/wt88047/permissions/privapp-permissions-omni_wt88047.xml:system/etc/permissions/privapp-permissions-omni_wt88047.xml
