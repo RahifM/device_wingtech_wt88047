@@ -94,3 +94,6 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 
 # inherit from the proprietary version
 include vendor/wingtech64/wt88047_64/BoardConfigVendor.mk
+
+# Disable qmi EAP-SIM security
+DISABLE_EAP_PROXY := true
