@@ -205,5 +205,5 @@
         <item>"/system/framework/arm64/boot.vdex"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
-   </string-array>
+    </string-array>
 </resources>
