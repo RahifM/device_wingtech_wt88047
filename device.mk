@@ -57,7 +57,9 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    omni_charger_res_images
+    omni_charger_res_images \
+    animation.txt \
+    font_charger.png
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
