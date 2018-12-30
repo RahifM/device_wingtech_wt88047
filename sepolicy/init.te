@@ -1,1 +1,0 @@
-allow init { domain -lmkd -crash_dump }:process noatsecure;
