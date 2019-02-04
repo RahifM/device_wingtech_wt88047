@@ -1,1 +1,4 @@
+# Dirac
+type dirac_prop, property_type;
+
 type compass_prop, property_type;
