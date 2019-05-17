@@ -1,0 +1,2 @@
+# Gesture
+type gesture_sysfs, sysfs_type, file_type;

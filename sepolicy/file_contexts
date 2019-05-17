@@ -1,0 +1,2 @@
+# Gesture
+/sys/android_touch/doubletap2wake                    u:object_r:gesture_sysfs:s0
