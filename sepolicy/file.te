@@ -1,1 +1,4 @@
 type proc_swap, fs_type;
+
+# Gesture
+type gesture_sysfs, sysfs_type, file_type;
