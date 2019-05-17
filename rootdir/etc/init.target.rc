@@ -38,6 +38,10 @@ on boot
     write /sys/block/mmcblk0/queue/add_random 0
     write /sys/block/mmcblk0/bdi/read_ahead_kb 128
 
+    # Gesture
+    chown system system /sys/android_touch/doubletap2wake
+    chmod 0660 /sys/android_touch/doubletap2wake
+
 on fs
     # GnssConfiguration doesn't actually look at gps.conf, just the debug file
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
