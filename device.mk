@@ -119,6 +119,9 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     libshims_ims
 
+# System Properties
+$(call inherit-product, device/wingtech/wt88047_64/system_prop.mk)
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/vendor/etc/thermal-engine.conf
