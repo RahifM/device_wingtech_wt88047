@@ -1,2 +1,2 @@
-add_lunch_combo aosp_wt88047-eng
-add_lunch_combo aosp_wt88047-userdebug
+add_lunch_combo aosp_wt88047_64-eng
+add_lunch_combo aosp_wt88047_64-userdebug
