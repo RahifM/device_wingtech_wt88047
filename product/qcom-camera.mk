@@ -4,8 +4,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     camera.msm8916 \
     libmm-qcamera \
-    libshim_camera \
-    GoogleCamera-v2.7
+    libshim_camera
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -16,5 +15,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cpp.duplication=false \
     persist.camera.hal.debug.mask=0 \
-    ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq \
-    persist.camera.HAL3.enabled=1
+    ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
