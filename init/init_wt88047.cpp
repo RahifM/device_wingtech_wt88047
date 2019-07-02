@@ -37,6 +37,7 @@
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
 
+#include <android-base/logging.h>
 #include <android-base/properties.h>
 
 //#include "vendor_init.h"
@@ -44,7 +45,7 @@
 
 #include "init_msm8916.h"
 
-using android::init::property_set;
+//using android::init::property_set;
 
 namespace android {
 namespace init {
