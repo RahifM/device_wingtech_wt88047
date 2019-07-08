@@ -19,7 +19,7 @@ $(call inherit-product, vendor/omni/config/gsm.mk)
 $(call inherit-product, device/wingtech/wt88047/full_wt88047.mk)
 
 # Bootanimation
-#TARGET_BOOTANIMATION_SIZE := 720p
+TARGET_BOOTANIMATION_SIZE := 720p
 
 # Inherit some common stuff
 $(call inherit-product, vendor/omni/config/common.mk)
