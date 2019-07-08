@@ -39,15 +39,12 @@
 
 #include <android-base/properties.h>
 
-//#include "vendor_init.h"
+#include "vendor_init.h"
 #include "property_service.h"
 
 #include "init_msm8916.h"
 
 using android::init::property_set;
-
-namespace android {
-namespace init {
 
 void property_override(char const prop[], char const value[])
 {
@@ -157,5 +154,3 @@ void init_target_properties()
     property_set("dalvik.vm.heapminfree", "512k");
     property_set("dalvik.vm.heapmaxfree", "8m");
 }
-}  // namespace init
-}  // namespace android
