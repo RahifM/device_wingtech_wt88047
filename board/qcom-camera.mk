@@ -8,3 +8,4 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=22 \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
+BOARD_USES_SNAPDRAGONCAMERA_VERSION := 2
