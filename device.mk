@@ -70,6 +70,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl
 
+# Dirac
+PRODUCT_PACKAGES += \
+    Dirac
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
