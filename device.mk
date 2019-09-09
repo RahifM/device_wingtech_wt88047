@@ -123,6 +123,9 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     libshims_ims
 
+# Shipping API level (for CTS backward compatibility)
+PRODUCT_SHIPPING_API_LEVEL := 19
+
 # System Properties
 $(call inherit-product, device/wingtech/wt88047/system_prop.mk)
 
