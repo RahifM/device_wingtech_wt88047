@@ -81,7 +81,6 @@ BOARD_NO_SECURE_DISCARD := true
 VENDOR_SECURITY_PATCH := 2017-01-01
 
 # SELinux
-include vendor/omni/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 
