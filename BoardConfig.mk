@@ -16,6 +16,7 @@
 FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
+include vendor/qcom/common/qti-vendor.mk
 
 DEVICE_PATH := device/wingtech/wt88047
 include $(DEVICE_PATH)/board/*.mk
