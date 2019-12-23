@@ -241,7 +241,6 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 
-<<<<<<< HEAD
 # Radio - IMS
 -vendor/app/ims/ims.apk|138de3a169d8c4703d9e5645abeb19e427b04909
 -vendor/app/imssettings/imssettings.apk|3020cdd3bc6d3c5bd147f2086fdd62fae108d81b
@@ -276,8 +275,6 @@ vendor/lib/libimsmedia_jni.so|fdd6027844b0b7ca0f7b1f903e131d0ad796bc4d
 vendor/lib/librcc.so|a409377843c8c0af7f92beac09048927e36e7ca0
 vendor/lib/libvoice-svc.so|fe8d2807b5b1a35310a9bcf80ceb4467503130b0
 
-=======
->>>>>>> 97ccbea5... wt88047: Purge ims [1/2]
 # Sensors
 vendor/lib/libcalmodule_akm.so
 vendor/lib/libcalmodule_yamaha.so
