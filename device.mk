@@ -79,10 +79,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf
 
-# IMS
-PRODUCT_PACKAGES += \
-    libshims_ims
-
 # Init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
