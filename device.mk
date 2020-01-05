@@ -124,6 +124,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshims_boringssl \
+    libshims_camera \
+    libshims_ims
+
 # System Properties
 $(call inherit-product, device/wingtech/wt88047_64/system_prop.mk)
 
