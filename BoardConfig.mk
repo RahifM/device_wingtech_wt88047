@@ -29,3 +29,12 @@ include vendor/wingtech/wt88047/BoardConfigVendor.mk
 
 # Disable qmi EAP-SIM security
 DISABLE_EAP_PROXY := true
+
+# Performance frameworks
+PRODUCT_PACKAGES += \
+   QPerformance \
+   UxPerformance
+
+PRODUCT_BOOT_JARS += \
+   QPerformance \
+   UxPerformance
