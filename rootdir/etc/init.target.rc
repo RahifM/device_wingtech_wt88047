@@ -51,6 +51,10 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
 
+on fs
+    # GnssConfiguration doesn't actually look at gps.conf, just the debug file
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
+
 service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user radio
