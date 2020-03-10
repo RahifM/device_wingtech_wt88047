@@ -58,9 +58,11 @@ TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.cpp
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+ TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
+endif
 TARGET_KERNEL_CONFIG := lineageos_wt88047_defconfig
-BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
+BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 androidboot.selinux=permissive
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true
