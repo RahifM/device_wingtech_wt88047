@@ -20,7 +20,7 @@ $(call inherit-product, vendor/wingtech64/wt88047_64/wt88047_64-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-pa
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
