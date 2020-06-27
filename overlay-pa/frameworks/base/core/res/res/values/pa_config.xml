@@ -41,4 +41,6 @@
          For example, a device with Home, Back and Recents keys would set this
          config to 19. -->
     <integer name="config_deviceHardwareKeys">19</integer>
+
+    <integer name="config_doubleTapOnHomeBehaviorHwkeys">5</integer>
 </resources>
