@@ -46,4 +46,6 @@
 
     <!-- Button backlight value ranges from 0 to 255; 0 is considered as Disabled -->
     <integer name="config_buttonBrightnessSettingDefault">0</integer>
+
+    <bool name="config_nightDisplayAvailable">false</bool>
 </resources>
