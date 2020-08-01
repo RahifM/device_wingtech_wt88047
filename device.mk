@@ -189,4 +189,14 @@ $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 
 # Misc apps
 PRODUCT_PACKAGES += \
-    LatinIME
+    Abstruct \
+    Calendar \
+    Contacts \
+    ChromeModernPublic \
+    DeskClock \
+    LatinIME \
+    ParanoidPapers \
+    messaging \
+    ParanoidPapers \
+    RetroMusicPlayer \
+    SnapdragonGallery
