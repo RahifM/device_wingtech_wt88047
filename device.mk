@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 19
 
 # System Properties
-$(call inherit-product, device/wingtech/wt88047/system_prop.mk)
+$(call inherit-product, device/wingtech/wt88047_64/system_prop.mk)
 
 # Telephony
 PRODUCT_PACKAGES += \
