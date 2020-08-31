@@ -241,6 +241,7 @@
     <integer name="config_doubleTapOnHomeKeyBehavior">11</integer>
     <integer name="config_longPressOnAppSwitchKeyBehavior">7</integer>
     <integer name="config_doubleTapOnAppSwitchKeyBehavior">6</integer>
+    <integer name="config_longPressOnBackKeyBehavior">14</integer>
 
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
