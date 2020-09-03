@@ -43,6 +43,7 @@
     <integer name="config_deviceHardwareKeys">19</integer>
 
     <integer name="config_doubleTapOnHomeBehaviorHwkeys">5</integer>
+    <integer name="config_longPressOnAppSwitchBehaviorHwkeys">6</integer>
 
     <!-- Button backlight value ranges from 0 to 255; 0 is considered as Disabled -->
     <integer name="config_buttonBrightnessSettingDefault">0</integer>
