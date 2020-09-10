@@ -40,3 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Boot Animation
 PRODUCT_COPY_FILES += \
     device/wingtech/wt88047/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
