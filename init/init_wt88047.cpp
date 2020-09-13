@@ -43,7 +43,7 @@
 #include "vendor_init.h"
 #include "property_service.h"
 
-using android::init::property_set;
+//using android::init::property_set;
 
 // copied from build/tools/releasetools/ota_from_target_files.py
 // but with "." at the end and empty entry
@@ -110,7 +110,7 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014819");
             set_ro_product_prop(source, "name", "2014819");
         }
-        property_set("ro.telephony.default_network", "9,1");
+        property_override("ro.telephony.default_network", "9,1");
     }
     /* S88047C1 */
     else if (buf.find("S88047C1") != std::string::npos) {
@@ -120,9 +120,9 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014818");
             set_ro_product_prop(source, "name", "2014818");
         }
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("persist.dbg.volte_avail_ovr", "1");
-        property_set("persist.dbg.vt_avail_ovr", "1");
+        property_override("ro.telephony.default_network", "9,1");
+        property_override("persist.dbg.volte_avail_ovr", "1");
+        property_override("persist.dbg.vt_avail_ovr", "1");
     }
     /* S88047B2 */
     else if (buf.find("S88047B2") != std::string::npos) {
@@ -132,9 +132,9 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014821");
             set_ro_product_prop(source, "name", "2014821");
         }
-        property_set("ro.telephony.default_network", "22,1");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("persist.radio.sglte.eons_domain", "ps");
+        property_override("ro.telephony.default_network", "22,1");
+        property_override("telephony.lteOnCdmaDevice", "1");
+        property_override("persist.radio.sglte.eons_domain", "ps");
     }
     /* S88047B1 */
     else if (buf.find("S88047B1") != std::string::npos) {
@@ -144,9 +144,9 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014812");
             set_ro_product_prop(source, "name", "2014812");
         }
-        property_set("ro.telephony.default_network", "22,1");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("persist.radio.sglte.eons_domain", "ps");
+        property_override("ro.telephony.default_network", "22,1");
+        property_override("telephony.lteOnCdmaDevice", "1");
+        property_override("persist.radio.sglte.eons_domain", "ps");
     }
     /* S86047A1 and S86047A1_CD */
     else if (buf.find("S86047A1") != std::string::npos) {
@@ -156,7 +156,7 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014813");
             set_ro_product_prop(source, "name", "2014813");
         }
-        property_set("ro.telephony.default_network", "9,1");
+        property_override("ro.telephony.default_network", "9,1");
     }
     /* S86047A2 and S86047A2_CD */
     else if (buf.find("S86047A2") != std::string::npos) {
@@ -166,7 +166,7 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014112");
             set_ro_product_prop(source, "name", "2014112");
         }
-        property_set("ro.telephony.default_network", "9,1");
+        property_override("ro.telephony.default_network", "9,1");
     }
     /* S88047A2 and S88047A1 */
     else {
@@ -176,16 +176,16 @@ void vendor_load_properties()
             set_ro_product_prop(source, "model", "2014811");
             set_ro_product_prop(source, "name", "2014811");
         }
-        property_set("ro.telephony.default_network", "9,1");
+        property_override("ro.telephony.default_network", "9,1");
     }
 
-    property_set("dalvik.vm.heapstartsize", "8m");
-    property_set("dalvik.vm.heapgrowthlimit", is2GB() ? "192m" : "96m");
-    property_set("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", "512k");
-    property_set("dalvik.vm.heapmaxfree", "8m");
+    property_override("dalvik.vm.heapstartsize", "8m");
+    property_override("dalvik.vm.heapgrowthlimit", is2GB() ? "192m" : "96m");
+    property_override("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
+    property_override("dalvik.vm.heaptargetutilization", "0.75");
+    property_override("dalvik.vm.heapminfree", "512k");
+    property_override("dalvik.vm.heapmaxfree", "8m");
 
     // Init a dummy BT MAC address, will be overwritten later
-    property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
+    property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
 }
