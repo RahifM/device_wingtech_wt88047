@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Dirac
 
+# Disable trace
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.traced.enable=0
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
