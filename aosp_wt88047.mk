@@ -43,3 +43,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+# Misc pkgs
+PRODUCT_PACKAGES += \
+    Stk
