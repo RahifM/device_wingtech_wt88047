@@ -184,3 +184,5 @@ $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 # Misc apps
 PRODUCT_PACKAGES += \
     WallpaperPicker2
+
+PRODUCT_VENDOR_KERNEL_HEADERS := device/wingtech/wt88047/kernel-headers
