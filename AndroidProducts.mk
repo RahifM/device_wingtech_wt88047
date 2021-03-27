@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_wt88047.mk
+    $(LOCAL_DIR)/aosp_wt88047.mk \
 
-COMMON_LUNCH_CHOICES := \
-    aosp_wt88047-user \
-    aosp_wt88047-userdebug \
-    aosp_wt88047-eng
+#COMMON_LUNCH_CHOICES := \
+ #   aosp_wt88047-user \
+  #  aosp_wt88047-userdebug \
+   # aosp_wt88047-eng
