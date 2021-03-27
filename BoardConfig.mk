@@ -74,11 +74,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_wt88047
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DT := true
-ifeq ($(TARGET_PREBUILT_KERNEL),)
- TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
-endif
+TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
 TARGET_KERNEL_CONFIG := lineageos_wt88047_defconfig
-BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true

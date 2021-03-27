@@ -17,14 +17,6 @@
 
 $(call inherit-product, vendor/wingtech/wt88047/wt88047-vendor.mk)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/wingtech/wt88047/prebuilt/zImage-dtb
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -180,7 +172,3 @@ PRODUCT_PACKAGES += \
 
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
-
-# Misc apps
-PRODUCT_PACKAGES += \
-    WallpaperPicker2

@@ -15,10 +15,6 @@
 
 $(call inherit-product, device/wingtech/wt88047/full_wt88047.mk)
 
-# Grab em APNs
-PRODUCT_COPY_FILES += device/wingtech/wt88047/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
-
-
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
@@ -37,13 +33,5 @@ BUILD_FINGERPRINT="Xiaomi/2014817/HM2014817:5.1.1/LMY47V/V9.2.5.0.LHJMIEK:user/r
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="2014817-user 5.1.1 LMY47V V9.2.5.0.LHJMIEK release-keys"
 
-# Boot Animation
-PRODUCT_COPY_FILES += \
-    device/wingtech/wt88047/prebuilt/bootanimation.zip:system/media/bootanimation.zip
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
-# Misc pkgs
-PRODUCT_PACKAGES += \
-    Stk
