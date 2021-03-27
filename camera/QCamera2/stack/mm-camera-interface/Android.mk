@@ -24,7 +24,7 @@ LOCAL_COPY_HEADERS += ../common/cam_types.h
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/inc \
     $(LOCAL_PATH)/../common \
-    $(TOP)/hardware/qcom/media-caf-msm8916/mm-core/inc \
+    $(call project-path-for,qcom-media)/mm-core/inc \
     system/media/camera/include
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror
